@@ -23,18 +23,24 @@
       <h2>Pleaes choose a theme!</h2>
     </header>
     <section class="themeSelection">
-      <div class="randomTheme">
+      <div class="randomTheme" data-theme="random">
         <img src="img/questionMark.JPEG" alt="Question Mark image" />
       </div>
-      <div class="harryPotterTheme">
+      <div class="harryPotterTheme" data-theme="harry">
         <img src="img/HarryPotter.JPEG" alt="Harry Potter image" />
       </div>
-      <div class="flagsTheme">
+      <div class="flagsTheme" data-theme="flags">
         <img src="img/flags.JPEG" alt="Flags image" />
       </div>
-      <div class="dogsTheme"><img src="img/dogs.JPEG" alt="Dogs image" /></div>
+      <div class="dogsTheme" data-theme="dogs">
+        <img src="img/dogs.JPEG" alt="Dogs image" />
+      </div>
     </section>
     <section class="memoryGame"></section>
+    <section class="winMessage">
+      <h2>You did it!</h2>
+      <button class="playAgainBtn btn btn-light mt-3">Play Again</button>
+    </section>
 
     <script src="script.js"></script>
   </body>
