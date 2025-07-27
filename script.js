@@ -3,7 +3,7 @@ $(document).ready(function () {
   let lockBoard = false;
   let hasCardFlipped = false;
   let firstCard, secondCard;
-  let count = 0;
+  let matchCount = 0;
 
   const themes = {
     harry: {
@@ -43,6 +43,7 @@ $(document).ready(function () {
     hasCardFlipped = false;
     firstCard, secondCard;
 
+    $(".header").hide();
     $(".themeSelection").hide();
     $(".memoryGame").show().empty();
 
@@ -56,7 +57,7 @@ $(document).ready(function () {
       pairedImages.forEach((src) => {
         const extraClass = theme === "flags" ? "flagCard" : "";
         $(".memoryGame")
-          .append(`<div class="memoryCard ${extraClass} data-card="${src}">
+          .append(`<div class="memoryCard ${extraClass}" data-card="${src}">
                 <div class="frontFace">
                 <img src="${src}" alt="Front image">
                 </div>
@@ -71,7 +72,6 @@ $(document).ready(function () {
         const randomPosition = Math.trunc(Math.random() * MAX_CARDS);
         this.style.order = randomPosition;
       });
-      $(".memoryGame").on("click", ".memoryCard", handleCardFlip);
     });
   }
 
@@ -94,6 +94,7 @@ $(document).ready(function () {
 
   function checkForMatch() {
     const isMatch = $(firstCard).data("card") === $(secondCard).data("card");
+    isMatch ? disableMatchedCards() : unflipCards();
   }
 
   function disableMatchedCards() {
@@ -134,6 +135,11 @@ $(document).ready(function () {
   $(".playAgainBtn").on("click", () => {
     $(".winMessage").hide();
     $(".themeSelection").fadeIn();
+    $(".header").fadeIn();
     matchCount = 0;
-  })
+    lockBoard = false;
+    hasCardFlipped = false;
+    [firstCard, secondCard] = [null, null];
+  });
+  $(".memoryGame").on("click", ".memoryCard", handleCardFlip);
 });
