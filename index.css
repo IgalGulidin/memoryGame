@@ -125,3 +125,7 @@ header {
   padding: 0.5rem;
   background-color: white;
 }
+
+.matchedBorder {
+  border: 2px solid gold;
+}

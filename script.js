@@ -98,8 +98,8 @@ $(document).ready(function () {
   }
 
   function disableMatchedCards() {
-    $(firstCard).addClass("matched");
-    $(secondCard).addClass("matched");
+    $(firstCard).addClass("matched matchedBorder");
+    $(secondCard).addClass("matched matchedBorder");
 
     matchCount++;
 
