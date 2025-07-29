@@ -38,11 +38,6 @@ $(document).ready(function () {
   });
 
   function loadGame(theme) {
-    matchCount = 0;
-    lockBoard = false;
-    hasCardFlipped = false;
-    firstCard, secondCard;
-
     $(".header").hide();
     $(".themeSelection").hide();
     $(".memoryGame").show().empty();
