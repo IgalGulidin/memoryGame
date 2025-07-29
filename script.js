@@ -100,7 +100,6 @@ $(document).ready(function () {
 
     if (matchCount === MAX_CARDS / 2) {
       setTimeout(() => {
-        // $(".memoryGame").hide();
         $(".winMessage").fadeIn();
       }, 800);
     }
